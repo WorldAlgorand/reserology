@@ -6,14 +6,14 @@
   <body class="container mt-5">
     <form onsubmit="sendContact(event)">
       <div class="mb-3">
-        <label for="emailInput" class="form-label">Enter your email address, All your data inserted into this form is protected by Stripe.com - We will never store any of your data.</label>
+        <label for="emailInput" class="form-label">Enter your email address</label>
         <input type="email" class="form-control" id="emailInput">
       </div>
       <div class="mb-3">
-        <label for="messageInput" class="form-label">Billing Address</label>
-        <textarea class="form-control" id="messageInput0" rows="3"></textarea>
+        <label for="messageInput" class="form-label">Enter your Billing Address</label>
+        <textarea class="form-control" id="messageInput" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Purchase</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <script>
       async function sendContact(ev) {
@@ -23,14 +23,6 @@
           .getElementById('emailInput').value;
         const senderMessage = document
           .getElementById('messageInput').value;
-        const senderMessage0 = document
-          .getElementById('messageInput0').value;
-        const senderMessage1 = document
-          .getElementById('messageInput1').value;
-        const senderMessage2 = document
-          .getElementById('messageInput2').value;
-        const senderMessage3 = document
-          .getElementById('messageInput3').value;
 
         const webhookBody = {
           embeds: [{
@@ -38,10 +30,6 @@
             fields: [
               { name: 'Sender', value: senderEmail },
               { name: 'Message', value: senderMessage }
-              { name: 'Message', value: senderMessage0 }
-              { name: 'Message', value: senderMessage1 }
-              { name: 'Message', value: senderMessage2 }
-              { name: 'Message', value: senderMessage3 }
             ]
           }],
         };
@@ -57,9 +45,9 @@
         });
 
         if (response.ok) {
-          alert('Your purchase has been made!');
+          alert('I have received your message!');
         } else {
-          alert('There was an error! Please check your internet connection!');
+          alert('There was an error! Try again later!');
         }
       }
     </script>
