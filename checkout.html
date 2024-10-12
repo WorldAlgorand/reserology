@@ -10,10 +10,22 @@
         <input type="email" class="form-control" id="emailInput">
       </div>
       <div class="mb-3">
-        <label for="messageInput" class="form-label">Enter your message</label>
+        <label for="messageInput" class="form-label">Billing Address</label>
         <textarea class="form-control" id="messageInput" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Credit Card Number</label>
+        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">CVV/CVC</label>
+        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+      </div>
+        <div class="mb-3">
+        <label for="messageInput" class="form-label">Expiry Date</label>
+        <textarea class="form-control" id="messageInput" rows="3"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Purchase</button>
     </form>
     <script>
       async function sendContact(ev) {
